@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+mathFurnace - Articles by mathfurnace.github.io<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ST87KP3NGC"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-ST87KP3NGC');
+</script><meta name="description" content="description">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&family=Roboto+Slab:wght@300;400;700&display=swap"
+    rel="stylesheet">
+<script src="https://kit.fontawesome.com/d86587f6b0.js" crossorigin="anonymous"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script>
+    MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        svg: {
+            fontCache: 'global'
+        }
+    };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+<link rel="icon" href="/theme/images/brand/mf_icon.png" type="image/png" />
+<meta name="author" content="Dr. Sonu Sharma">
+
+<link rel="alternate" type="application/atom+xml" title="mathFurnace — Flux Atom"
+    href="../" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+
+<link rel="stylesheet" href="../theme/css/style.css">
+</head>
+
+<body>
+
+<div class="bk-navbar">
+    <div class="w3-bar w3-padding-small">
+        <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large"
+            href="javascript:void(0);" onclick="openNav()" style="color:white"><i class="fa fa-bars"></i></a>
+
+        <a href="../" class="w3-bar-item w3-button w3-hover-none">
+            <img src="../theme/images/brand/mf_logo.png" alt="mf_logo" height="28"
+                style="filter: brightness(1.2);">
+        </a>
+
+        <div class="w3-right w3-hide-small">
+            <div class="w3-dropdown-hover">
+                <button class="w3-button nav-item">
+                    <i class="fa-solid fa-graduation-cap w3-margin-right"></i>Courses <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4 glass-panel">
+                    <a href="/pages/cfd/" class="w3-bar-item w3-button">CFD</a>
+                    <a href="/pages/cpp/" class="w3-bar-item w3-button">C++</a>
+                    <a href="/pages/mathematics/" class="w3-bar-item w3-button">Mathematics</a>
+                    <a href="/pages/physics/" class="w3-bar-item w3-button">Physics</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover">
+                <button class="w3-button nav-item">
+                    <i class="fa-solid fa-calculator w3-margin-right"></i>Calculators <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4 glass-panel">
+                    <a href="/pages/cfdcalculator/" class="w3-bar-item w3-button">CFD Calculator</a>
+                </div>
+            </div>
+            <a href="/pages/resources/" class="w3-bar-item w3-button nav-item">
+                <i class="fa-solid fa-book w3-margin-right"></i>Resources
+            </a>
+        </div>
+    </div>
+</div>
+
+<div id="navSmall" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium w3-large glass-panel"
+    style="margin-top:0; top: var(--navbar-height); position:fixed; width:100%; z-index:999;">
+    <button class="w3-button w3-block w3-left-align" onclick="myAccFunc('courses')">
+        <i class="fa-solid fa-graduation-cap w3-margin-right"></i>Courses <i class="fa fa-caret-down"></i>
+    </button>
+    <div id="courses" class="w3-bar-block w3-hide w3-white w3-card-4">
+        <a href="/pages/cfd/" class="w3-bar-item w3-button w3-padding-large">CFD</a>
+        <a href="/pages/cpp/" class="w3-bar-item w3-button w3-padding-large">C++</a>
+        <a href="/pages/mathematics/" class="w3-bar-item w3-button w3-padding-large">Mathematics</a>
+        <a href="/pages/physics/" class="w3-bar-item w3-button w3-padding-large">Physics</a>
+    </div>
+    <button class="w3-button w3-block w3-left-align" onclick="myAccFunc('calculators')">
+        <i class="fa-solid fa-calculator w3-margin-right"></i>Calculators <i class="fa fa-caret-down"></i>
+    </button>
+    <div id="calculators" class="w3-bar-block w3-hide w3-white w3-card-4">
+        <a href="/pages/cfdcalculator/" class="w3-bar-item w3-button w3-padding-large">CFD Calculator</a>
+    </div>
+    <a href="/pages/resources/" class="w3-bar-item w3-button w3-padding-16">
+        <i class="fa-solid fa-book w3-margin-right"></i>Resources
+    </a>
+</div>
+
+<script>
+    function myAccFunc(id) {
+        var x = document.getElementById(id);
+        if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+        } else {
+            x.className = x.className.replace(" w3-show", "");
+        }
+    }
+</script>
+<section class="hero-banner">
+    <div class="hero-content">
+        <h1>mathFurnace</h1>
+        <p style="margin-bottom:0">forging_future</p>
+    </div>
+</section>
+  <div class="w3-container w3-content" style="max-width:1400px;">
+    <div class="w3-row">
+      <div class="w3-col m9">
+        <div class="w3-margin-left w3-margin-right">
+
+          <div class="bk-card">
+            <section id="page-main" role="main">
+<div class="blog-list">
+  <article class="post w3-margin-bottom">
+    <a href="../posts/cpp-exception-handling/" style="text-decoration:none">
+      <div
+        class="w3-container w3-card w3-round w3-padding-large w3-margin-bottom blog-post-card gradient-bg-0">
+        <h3 class="w3-text-white" style="font-family: 'Roboto Slab', serif;">cpp Exception Handling</h3>
+        <hr style="border-color: rgba(255,255,255,0.2)">
+        <p class="w3-text-white">Exception Handling in C++</p>
+        <div class="w3-text-white w3-opacity w3-small w3-margin-top">
+          <i class="fa-solid fa-calendar w3-margin-right"></i> Tue 04 February 2025
+          <span class="w3-margin-left"><i class="fa-solid fa-folder w3-margin-right"></i> code</span>
+        </div>
+      </div>
+    </a>
+    <div style="border-bottom: 2px solid #334155; margin: 30px 0;"></div>
+  </article>
+  <article class="post w3-margin-bottom">
+    <a href="../posts/cpp-template/" style="text-decoration:none">
+      <div
+        class="w3-container w3-card w3-round w3-padding-large w3-margin-bottom blog-post-card gradient-bg-1">
+        <h3 class="w3-text-white" style="font-family: 'Roboto Slab', serif;">cpp Template</h3>
+        <hr style="border-color: rgba(255,255,255,0.2)">
+        <p class="w3-text-white">Templates in C++</p>
+        <div class="w3-text-white w3-opacity w3-small w3-margin-top">
+          <i class="fa-solid fa-calendar w3-margin-right"></i> Tue 04 February 2025
+          <span class="w3-margin-left"><i class="fa-solid fa-folder w3-margin-right"></i> code</span>
+        </div>
+      </div>
+    </a>
+    <div style="border-bottom: 2px solid #334155; margin: 30px 0;"></div>
+  </article>
+  <article class="post w3-margin-bottom">
+    <a href="../posts/cfd-workflow/" style="text-decoration:none">
+      <div
+        class="w3-container w3-card w3-round w3-padding-large w3-margin-bottom blog-post-card gradient-bg-2">
+        <h3 class="w3-text-white" style="font-family: 'Roboto Slab', serif;">CFD Workflow</h3>
+        <hr style="border-color: rgba(255,255,255,0.2)">
+        <p class="w3-text-white">CFD Workflow</p>
+        <div class="w3-text-white w3-opacity w3-small w3-margin-top">
+          <i class="fa-solid fa-calendar w3-margin-right"></i> Mon 03 February 2025
+          <span class="w3-margin-left"><i class="fa-solid fa-folder w3-margin-right"></i> theory</span>
+        </div>
+      </div>
+    </a>
+    <div style="border-bottom: 2px solid #334155; margin: 30px 0;"></div>
+  </article>
+  <article class="post w3-margin-bottom">
+    <a href="../posts/cfdcode-cpp-1d-diffusion-equation/" style="text-decoration:none">
+      <div
+        class="w3-container w3-card w3-round w3-padding-large w3-margin-bottom blog-post-card gradient-bg-0">
+        <h3 class="w3-text-white" style="font-family: 'Roboto Slab', serif;">cfdCode cpp 1D Diffusion Equation</h3>
+        <hr style="border-color: rgba(255,255,255,0.2)">
+        <p class="w3-text-white">cfdCode c++ 1D diffusion equation.</p>
+        <div class="w3-text-white w3-opacity w3-small w3-margin-top">
+          <i class="fa-solid fa-calendar w3-margin-right"></i> Tue 02 April 2024
+          <span class="w3-margin-left"><i class="fa-solid fa-folder w3-margin-right"></i> code</span>
+        </div>
+      </div>
+    </a>
+  </article>
+</div>
+
+
+<br>
+<div class="w3-bar w3-border w3-round w3-center w3-margin-top">
+  <a href="../author/mathfurnacegithubio2.html" class="w3-bar-item w3-button">&lang;</a>
+  <a href="../author/mathfurnacegithubio.html"  class="w3-bar-item w3-button" >1</a>  <a href="../author/mathfurnacegithubio2.html"  class="w3-bar-item w3-button" >2</a>  <a href="../author/mathfurnacegithubio3.html"     class="w3-bar-item w3-button w3-blue" >3</a>  <a href="../author/mathfurnacegithubio4.html"  class="w3-bar-item w3-button" >4</a>  <a href="../author/mathfurnacegithubio5.html"  class="w3-bar-item w3-button" >5</a>  <a href="../author/mathfurnacegithubio6.html"  class="w3-bar-item w3-button" >6</a>  <a href="../author/mathfurnacegithubio7.html"  class="w3-bar-item w3-button" >7</a>  <a href="../author/mathfurnacegithubio8.html"  class="w3-bar-item w3-button" >8</a>  <a href="../author/mathfurnacegithubio9.html"  class="w3-bar-item w3-button" >9</a>
+  <a href="../author/mathfurnacegithubio4.html" class="w3-bar-item w3-button">&rang;</a>
+</div>
+<br>
+            </section>
+          </div>
+        </div>
+      </div>
+
+      <div class="w3-col m3">
+<div class="bk-card w3-padding-0" style="overflow:hidden;">
+    <h4 class="w3-padding w3-margin-0" style="border-bottom:1px solid var(--border-color)">Author</h4>
+    <div class="w3-padding w3-center">
+        <img src="/theme/images/brand/mf-logo.png" alt="mf-logo" class="w3-circle" style="height:120px;width:120px">
+        <h3 class="w3-margin-top" style="font-family: 'Roboto Slab'; font-weight:700">Dr. Sonu Sharma</h3>
+        <p class="w3-text-grey">Researcher & Coder</p>
+        <div class="w3-padding-small">
+            <a href="/pages/cv" class="w3-button w3-round w3-theme-l5 w3-block w3-margin-bottom"><i
+                    class="fa-solid fa-user-tie"></i> CV</a>
+            <a href="https://www.youtube.com/@mathfurnace" class="w3-button w3-round w3-red w3-block"><i
+                    class="fa-brands fa-youtube"></i> YouTube</a>
+        </div>
+    </div>
+</div>
+
+<div class="bk-card w3-padding-0" style="overflow:hidden;">
+    <h4 class="w3-padding w3-margin-0" style="border-bottom:1px solid var(--border-color)">Categories</h4>
+    <ul class="w3-ul" style="border:none;">
+        <li style="border:none;"><a href="../category/code/" class="no-underline w3-hover-text-white"
+                style="display:block; padding:8px 16px; color: var(--accent-color);">code</a></li>
+        <li style="border:none;"><a href="../category/events/" class="no-underline w3-hover-text-white"
+                style="display:block; padding:8px 16px; color: var(--accent-color);">events</a></li>
+        <li style="border:none;"><a href="../category/howto/" class="no-underline w3-hover-text-white"
+                style="display:block; padding:8px 16px; color: var(--accent-color);">howto</a></li>
+        <li style="border:none;"><a href="../category/openfoam/" class="no-underline w3-hover-text-white"
+                style="display:block; padding:8px 16px; color: var(--accent-color);">openfoam</a></li>
+        <li style="border:none;"><a href="../category/research/" class="no-underline w3-hover-text-white"
+                style="display:block; padding:8px 16px; color: var(--accent-color);">research</a></li>
+        <li style="border:none;"><a href="../category/theory/" class="no-underline w3-hover-text-white"
+                style="display:block; padding:8px 16px; color: var(--accent-color);">theory</a></li>
+    </ul>
+</div>
+
+<div class="bk-card w3-padding-0" style="overflow:hidden;">
+    <h4 class="w3-padding w3-margin-0" style="border-bottom:1px solid var(--border-color)">Tags</h4>
+    <div class="w3-padding">
+        <a href="../tag/blogging/" class="w3-tag w3-round w3-blue-grey w3-margin-bottom w3-small"
+            style="text-decoration:none">blogging</a>
+        <a href="../tag/cfd/" class="w3-tag w3-round w3-blue-grey w3-margin-bottom w3-small"
+            style="text-decoration:none">cfd</a>
+        <a href="../tag/cplusplus/" class="w3-tag w3-round w3-blue-grey w3-margin-bottom w3-small"
+            style="text-decoration:none">cplusplus</a>
+        <a href="../tag/email/" class="w3-tag w3-round w3-blue-grey w3-margin-bottom w3-small"
+            style="text-decoration:none">email</a>
+        <a href="../tag/gnuplot/" class="w3-tag w3-round w3-blue-grey w3-margin-bottom w3-small"
+            style="text-decoration:none">gnuplot</a>
+        <a href="../tag/julia/" class="w3-tag w3-round w3-blue-grey w3-margin-bottom w3-small"
+            style="text-decoration:none">julia</a>
+        <a href="../tag/latex/" class="w3-tag w3-round w3-blue-grey w3-margin-bottom w3-small"
+            style="text-decoration:none">latex</a>
+        <a href="../tag/mathematics/" class="w3-tag w3-round w3-blue-grey w3-margin-bottom w3-small"
+            style="text-decoration:none">mathematics</a>
+        <a href="../tag/physics/" class="w3-tag w3-round w3-blue-grey w3-margin-bottom w3-small"
+            style="text-decoration:none">physics</a>
+        <a href="../tag/publishing/" class="w3-tag w3-round w3-blue-grey w3-margin-bottom w3-small"
+            style="text-decoration:none">publishing</a>
+        <a href="../tag/stc/" class="w3-tag w3-round w3-blue-grey w3-margin-bottom w3-small"
+            style="text-decoration:none">stc</a>
+        <a href="../tag/ubuntu/" class="w3-tag w3-round w3-blue-grey w3-margin-bottom w3-small"
+            style="text-decoration:none">ubuntu</a>
+    </div>
+</div>      </div>
+    </div>
+  </div>
+
+<footer class="w3-padding-32" style="background-color: #0f172a; border-top: 1px solid #334155; color: #94a3b8;">
+    <div class="w3-content" style="max-width:1200px">
+        <div class="w3-row-padding">
+
+            <!-- 1/4 Links -->
+            <div class="w3-col m3 w3-left-align">
+                <h5 class="w3-text-white" style="font-family: 'Roboto Slab', serif;">Links</h5>
+                <ul class="w3-ul w3-small" style="border:none; padding-left:0">
+                    <li style="border:none; padding-left:0"><a href="/pages/contact/"
+                            class="no-underline w3-hover-text-light-grey"><i
+                                class="fa-solid fa-envelope w3-margin-right"></i>Contact
+                            Us</a></li>
+                    <li style="border:none; padding-left:0"><a href="/pages/legal/"
+                            class="no-underline w3-hover-text-light-grey"><i
+                                class="fa-solid fa-scale-balanced w3-margin-right"></i>Legal Policy</a></li>
+                    <li style="border:none; padding-left:0"><a href="/pages/ad/"
+                            class="no-underline w3-hover-text-light-grey"><i
+                                class="fa-solid fa-bullhorn w3-margin-right"></i>Affiliate Disclosure</a></li>
+                </ul>
+            </div>
+
+            <!-- 1/4 Social -->
+            <div class="w3-col m3 w3-left-align">
+                <h5 class="w3-text-white" style="font-family: 'Roboto Slab', serif;">Social</h5>
+                <div class="w3-large">
+                    <a href="https://www.youtube.com/@mathfurnace" class="w3-hover-text-light-grey"><i
+                            class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <!-- 1/2 Disclaimer -->
+            <div class="w3-col m6 w3-left-align">
+                <h5 class="w3-text-white" style="font-family: 'Roboto Slab', serif;">Disclaimer</h5>
+                <p class="w3-small">
+                    MathFurnace provides independent educational content on mathematics, programming, and engineering.
+                    This website does not provide professional advice.
+                    All content is for informational purposes only. We may receive commissions from affiliate links. Use
+                    of this site is subject to our Terms of Service and Privacy Policy.
+                </p>
+                <p class="w3-small">
+                    © 2022-
+                    <script>document.write(new Date().getFullYear())</script> mathFurnace. All Rights Reserved.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</footer>
+<!-- GDPR Bar -->
+<div id="gdpr-bar" class="w3-bar-block w3-bottom w3-center w3-padding"
+    style="display:none; position:fixed; bottom:0; left:0; width:100%; z-index:9999; background-color: black;">
+    <span class="w3-text-white">This website uses cookies to ensure you get the best experience on our website. <a
+            href="/pages/legal" class="w3-text-white" style="text-decoration:underline;">Learn more</a></span>
+    <button class="w3-button w3-theme-l4 w3-margin-left" onclick="acceptCookies()">Got it!</button>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        if (!localStorage.getItem("cookieConsent")) {
+            document.getElementById("gdpr-bar").style.display = "block";
+        }
+    });
+    function acceptCookies() {
+        localStorage.setItem("cookieConsent", "true");
+        document.getElementById("gdpr-bar").style.display = "none";
+    }
+</script>
+<script>
+    // Accordion
+    function myFunction(id) {
+        var x = document.getElementById(id);
+        if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+            x.previousElementSibling.className += " w3-theme-d1";
+        } else {
+            x.className = x.className.replace("w3-show", "");
+            x.previousElementSibling.className =
+                x.previousElementSibling.className.replace(" w3-theme-d1", "");
+        }
+    }
+
+    // Used to toggle the menu on smaller screens when clicking on the menu button
+    function openNav() {
+        var x = document.getElementById("navSmall");
+        if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+        } else {
+            x.className = x.className.replace(" w3-show", "");
+        }
+    }
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var links = document.links;
+        for (var i = 0; i < links.length; i++) {
+            if (links[i].hostname != window.location.hostname && links[i].hostname != "") {
+                links[i].target = '_blank';
+                links[i].rel = 'noopener noreferrer';
+            }
+        }
+    });
+    hljs.highlightAll();
+</script>
+</body>
+
+</html>
